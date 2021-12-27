@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  resources :books
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  root 'book#input'
-  match 'book/output', via: %I[get post]
-  get 'book/data'
+  root 'books#new'
+  match 'books/output', via: %I[get post]
+  get 'books/data'
   get '/signin', to: 'sessions#new'
   get '/signup', to: 'users#new'
 end
