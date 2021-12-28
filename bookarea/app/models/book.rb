@@ -1,3 +1,5 @@
 class Book < ApplicationRecord
-    has_and_belongs_to_many :users
+    has_many :relations
+    has_many :users, through: :relations
+    validates_presence_of :name, :author
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_27_130502) do
+ActiveRecord::Schema.define(version: 2021_12_28_004026) do
 
   create_table "books", force: :cascade do |t|
     t.string "name"
@@ -18,10 +18,15 @@ ActiveRecord::Schema.define(version: 2021_12_27_130502) do
     t.string "publishing_house"
     t.integer "year"
     t.string "isbn"
-    t.integer "users_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_books_on_users_id"
+  end
+
+  create_table "relations", force: :cascade do |t|
+    t.integer "book_id"
+    t.integer "user_id"
+    t.index ["book_id"], name: "index_relations_on_book_id"
+    t.index ["user_id"], name: "index_relations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,8 +37,6 @@ ActiveRecord::Schema.define(version: 2021_12_27_130502) do
     t.string "password"
     t.string "password_digest"
     t.boolean "admin", default: false
-    t.integer "books_id"
-    t.index ["books_id"], name: "index_users_on_books_id"
   end
 
 end
