@@ -14,6 +14,24 @@
     <strong>Email:</strong>
     <%= @user.email %>
   </p>
+
+<div class>
+  <strong>Liked books</strong>
+  <% if (@user.books.length != 0)  %>
+  <% @user.books.each do |book| %>
+  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header"><%= book.isbn%></div>
+  <div class="card-body">
+    <h5 class="card-title">"<%= book.name%>" by <%= book.author%></h5>
+    <p class="card-text"><%= book.publishing_house%><br/><%= book.year%></p>
+  </div>
+  </div>
+    <% end %>
+  <% else %>
+    <p> nothing liked </p>  
+  <% end %>
+  </div>
+
   <div class="btn-group col-12">
     <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-primary'%>
     <%= render 'back', current_user: @current_user %>

@@ -21,7 +21,7 @@
     <% end %>
     <%= yield %>
     <% unless @path==sessions_path %>
-      <%= button_to 'Sign out', {controller: :sessions, action: :destroy, id: session[:session_id]}, method: :delete, class: 'btn btn-secondary col-12'%>
+      <%= button_to 'Sign out', {controller: :sessions, action: :destroy, id: session[:session_id]}, method: :delete, class: 'btn btn-secondary col-3'%>
     <% end %>
   </body>
 </html>
