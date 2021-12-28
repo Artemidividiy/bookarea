@@ -5,7 +5,6 @@ class MakingItAllFromScratch < ActiveRecord::Migration[6.1]
       t.datetime "updated_at", precision: 6, null: false
       t.string "username"
       t.string "email"
-      t.string "password"
       t.string "password_digest"
       t.boolean "admin", default: false
     end
