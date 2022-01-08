@@ -14,6 +14,7 @@ describe 'User System' do
 
   it 'doesn\'t allow to calculate unless logged in', js: true do
     visit books_path
-    expect(page.body).not_to include 'table'
+    expect(page.body).not_to include 'Name'
+    expect(page.body).not_to include 'Sign out'
   end
 end
