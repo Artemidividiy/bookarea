@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application.css', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
       input {
           margin-bottom: 10px;
@@ -20,8 +21,5 @@
       <small>Logged in as <%= @current_user.username %></small>
     <% end %>
     <%= yield %>
-    <% unless @path==sessions_path %>
-      <%= button_to 'Sign out', {controller: :sessions, action: :destroy, id: session[:session_id]}, method: :delete, class: 'btn btn-secondary col-3'%>
-    <% end %>
   </body>
 </html>

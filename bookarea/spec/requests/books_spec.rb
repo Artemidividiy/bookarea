@@ -24,7 +24,17 @@ RSpec.describe "/books", type: :request do
     skip("Add a hash of attributes invalid for your model")
   }
 
+  
+  
   describe "GET /index" do
+    def auth
+    fill_in 'user_username', with: 'admin'
+    fill_in 'user_password', with: 'admin'
+    click_button 'commit'
+  end
+    before :all do
+      auth
+    end
     it "renders a successful response" do
       Book.create! valid_attributes
       get books_url

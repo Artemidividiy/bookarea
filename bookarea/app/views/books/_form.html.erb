@@ -1,42 +1,46 @@
 <%= form_with(model: book) do |form| %>
-  <% if book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+<div class='cardo'>
+  <div class='card-box'>
+    <% if book.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
-      <ul>
-        <% book.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <ul>
+          <% book.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <div class="field">
+    <div class="">
     <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+      <%= form.text_field :name, {class: 'form-control'}%>
+    </div>
 
-  <div class="field">
+    <div class="">
     <%= form.label :author %>
-    <%= form.text_field :author %>
-  </div>
+      <%= form.text_field :author, {class: 'form-control'} %>
+    </div>
 
-  <div class="field">
+    <div class="">
     <%= form.label :publishing_house %>
-    <%= form.text_field :publishing_house %>
-  </div>
+      <%= form.text_field :publishing_house, {class: 'form-control'} %> 
+    </div>
 
-  <div class="field">
+    <div class="">
     <%= form.label :year %>
-    <%= form.number_field :year %>
-  </div>
+      <%= form.number_field :year, {class: 'form-control'} %>
+    </div>
 
-  <div class="field">
-    <%= form.label :isbn %>
-    <%= form.text_field :isbn %>
-  </div>
+    <div class="">
+    <%= form.label :isbn %>   
+      <%= form.text_field :isbn, {class: 'form-control'} %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
+</div>
 <% end %>

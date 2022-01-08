@@ -1,4 +1,19 @@
 <h1>New Book</h1>
-
-<%= render 'form', book: @book %>
+<section>
+    <nav>
+      <h1 class='logo'>BookArea</h1>
+      <ul class='navigation'>
+        <li class='navbar-nav'><ul class='dropdown'>
+          <li class='dropdown-item'><p>View all</p></li>
+          <li class='dropdown-item'><p>New Book</p></li>
+        </ul></li>
+        <% if @current_user.admin %>
+          <li class='navbar-nav'><p>Users</p></li>
+        <% end %>
+        <li class='navbar-nav'><p>Sign out</p></li>
+      </ul>
+    </nav>
+    </section>
+<%= button_to 'Sign out', {controller: :sessions, action: :destroy, id: session[:session_id]}, method: :delete, class: 'btn btn-secondary col-3'%>
+<%= render 'form', book: @book%>
 <%= link_to 'Back', books_path %>
