@@ -17,24 +17,20 @@ RSpec.describe "/books", type: :request do
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      name: 'test_name',
+      author: 'test_author',
+      year: 2022, 
+      publishing_house: "test_pb",
+      
+    }
   }
 
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
   }
 
-  
-  
   describe "GET /index" do
-    def auth
-    fill_in 'user_username', with: 'admin'
-    fill_in 'user_password', with: 'admin'
-    click_button 'commit'
-  end
-    before :all do
-      auth
-    end
     it "renders a successful response" do
       Book.create! valid_attributes
       get books_url
@@ -43,7 +39,7 @@ RSpec.describe "/books", type: :request do
   end
 
   describe "GET /show" do
-    it "renders a successful response" do
+    it "renders a successful response", js: true do
       book = Book.create! valid_attributes
       get book_url(book)
       expect(response).to be_successful

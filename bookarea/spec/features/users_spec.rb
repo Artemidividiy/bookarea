@@ -1,5 +1,6 @@
 require 'rails_helper'
 describe 'User System' do
+  
   it 'allows to register a user, log in', js: true do
     visit root_path
     click_on 'Sign up'
