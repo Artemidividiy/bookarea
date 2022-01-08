@@ -22,7 +22,6 @@ RSpec.describe "/books", type: :request do
       author: 'test_author',
       year: 2022, 
       publishing_house: "test_pb",
-      
     }
   }
 

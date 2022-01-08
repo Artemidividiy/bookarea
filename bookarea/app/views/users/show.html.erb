@@ -1,6 +1,6 @@
 <h1>User data</h1>
 
-<div style="width: 400px; padding: 50px">
+<div>
   <% flash[:notice]&.tap do |notice| %>
       <div class="alert alert-success"><%= notice %></div>
   <% end %>
@@ -19,7 +19,7 @@
   <strong>Liked books</strong>
   <% if (@user.books.length != 0)  %>
   <% @user.books.each do |book| %>
-  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card text-white bg-primary mb-3">
   <div class="card-header"><%= book.isbn%></div>
   <div class="card-body">
     <h5 class="card-title">"<%= book.name%>" by <%= book.author%></h5>

@@ -1,9 +1,5 @@
 body {
     background-color: rgb(61, 61, 61);
-    form {
-        margin: auto;
-        display: block;
-    }
 }
 .cardo {
     width: 20%;
@@ -15,4 +11,8 @@ body {
     border: #FED132;
     filter: drop-shadow(16, 16, #236DF6);
     margin: auto;
+}
+form-box{
+    margin: auto;
+    width: 20%;
 }
