@@ -22,6 +22,7 @@ class BooksController < ApplicationController
 
   def unlike
     current_user.books.delete @book
+    
   end
   def like 
     current_user.books << @book
