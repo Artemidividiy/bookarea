@@ -47,9 +47,9 @@
                 <%= link_to t('forms.sign_out'), {controller: :sessions, action: :destroy, id: session[:session_id]}, method: :delete, class: 'nav-link', style: 'margin: 0;'%>
               </strong>
             </small>
-            <small style='color: white;'>
+            <a href='users/<%= @current_user.id%>' style='margin: 0; color: white;'>
               Logged in as <%= @current_user.username %>
-            </small>
+            </a>
             </li>
             </ul>
       </div>

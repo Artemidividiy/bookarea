@@ -23,6 +23,12 @@
   <strong>Isbn:</strong>
   <%= @book.isbn %>
 </p>
+<% if @book.related?(@current_user)%>
+  <%=  button_to 'Like', {controller: :books, action: :like, id: @book.id }, method: :put,   disabled: 'true' %>
+  <%# <%= button_to 'Like', books_like_path(@book), method: 'put', disabled: true %> %>
+<% else%> 
+  <%=  button_to 'Like', {controller: :books, action: :like, id: @book.id }, method: :put%>
+<% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

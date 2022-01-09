@@ -30,7 +30,19 @@
     <% end %>
   </tbody>
 </table>
-
+    <div class='col-6 col-sm-4 col-md-3 p-2'>
+    <% @books.each do |book| %>
+      <div class="card mb-3">
+  <div class="card-header">ISBN: <%= book.isbn%></div>
+  <div class="card-body">
+    <h5 class="card-title">"<%= book.name%>" by <%= book.author%></h5>
+  </div>
+  <div class='card-footer'>
+    <%= button_to 'more', {controller: :books, action: :show, id: book.id}, method: :get %>
+  </div>
+  </div>
+      <% end %>
+    </div>
 <br>
 
 <%= button_to 'New Book', {controller: :books, action: :new}, method: :get, class: 'btn btn-outline-primary ntm-sm' %>

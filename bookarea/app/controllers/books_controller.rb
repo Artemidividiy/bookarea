@@ -20,10 +20,16 @@ class BooksController < ApplicationController
   def edit
   end
 
+  def like 
+    @book = Book.all.find_by(params[:id])
+    current_user.books << @book
+    # Relation.create(user_id: current_user.id, book_id: @book.id)
+    puts 'hueta'
+  end
+
   # POST /books or /books.json
   def create
     @book = Book.new(book_params)
-    @book.users << current_user
     respond_to do |format|
       if @book.save
         current_user.books << @book
