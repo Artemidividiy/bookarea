@@ -44,7 +44,7 @@
     <%= button_to 'more', {controller: :books, action: :show, id: book.id}, method: :get %>
     </div>
     <div class='col-3'>
-    <% if @current_user.admin || @current_user == book.users.first%>
+    <% if @current_user&.admin || @current_user == book.users.first%>
     <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end%>
     </div>
