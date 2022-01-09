@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[ show edit update destroy ]
+  before_action :set_book, only: %i[ show edit update destroy like unlike]
   def input;end
   
   # GET /books or /books.json
@@ -20,8 +20,10 @@ class BooksController < ApplicationController
   def edit
   end
 
+  def unlike
+    current_user.books.delete @book
+  end
   def like 
-    @book = Book.all.find_by(params[:id])
     current_user.books << @book
     # Relation.create(user_id: current_user.id, book_id: @book.id)
     puts 'hueta'

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   root 'books#new'
   put '/books/:id/like', to: 'books#like'
+  put '/books/:id/unlike', to: 'books#unlike'
   get '/signin', to: 'sessions#new'
   get '/signup', to: 'users#new'
 end
