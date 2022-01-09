@@ -25,11 +25,13 @@
   <strong>Isbn:</strong>
   <%= @book.isbn %>
 </p>
+<div id="like-btn">
 <% if @book.related?(@current_user)%>
-  <%=  button_to 'Unlike', {controller: :books, action: :unlike, id: @book.id }, method: :put, class: 'btn btn-danger'%>
-<% else%> 
-  <%=  button_to 'Like', {controller: :books, action: :like, id: @book.id }, method: :put, class: 'btn btn-outline-danger'%>
+  <%= button_to 'Unlike', { action: :unlike, id: @book.id }, method: :put, remote: true, class: 'btn btn-danger' %>
+<% else%>
+  <%= button_to 'Like', { action: :like, id: @book.id }, method: :put, remote: true, class: 'btn btn-outline-danger' %>
 <% end %>
+</div>
 
 <% if @current_user == @book.users.first%>
 <%= link_to 'Edit', edit_book_path(@book) %>

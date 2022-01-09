@@ -1,0 +1,3 @@
+document.getElementById("like-btn").innerHTML = `
+<%= button_to 'Unlike', { action: :unlike, id: @book.id }, method: :put, remote: true, class: 'btn btn-danger' %>
+`
