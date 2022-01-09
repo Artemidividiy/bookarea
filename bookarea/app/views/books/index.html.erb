@@ -38,7 +38,18 @@
     <h5 class="card-title">"<%= book.name%>" by <%= book.author%></h5>
   </div>
   <div class='card-footer'>
+  <div class='container'>
+  <div class='row'>
+  <div class='col-2'>
     <%= button_to 'more', {controller: :books, action: :show, id: book.id}, method: :get %>
+    </div>
+    <div class='col-3'>
+    <% if @current_user.admin || @current_user == book.users.first%>
+    <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end%>
+    </div>
+    </div>
+    </div>
   </div>
   </div>
       <% end %>

@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<div style='margin: auto; width: 20%;'>
+
 <p>
   <strong>Name:</strong>
   <%= @book.name %>
@@ -24,10 +26,12 @@
   <%= @book.isbn %>
 </p>
 <% if @book.related?(@current_user)%>
-  <%=  button_to 'Unlike', {controller: :books, action: :unlike, id: @book.id }, method: :put%>
+  <%=  button_to 'Unlike', {controller: :books, action: :unlike, id: @book.id }, method: :put, class: 'btn btn-danger'%>
 <% else%> 
-  <%=  button_to 'Like', {controller: :books, action: :like, id: @book.id }, method: :put%>
+  <%=  button_to 'Like', {controller: :books, action: :like, id: @book.id }, method: :put, class: 'btn btn-outline-danger'%>
 <% end %>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<% if @current_user == @book.users.first%>
+<%= link_to 'Edit', edit_book_path(@book) %>
+<% end%>
+<%= button_to 'Back', {controller: :books, action: :index}, method: :get, class: 'btn btn-outline-secondary'%>
