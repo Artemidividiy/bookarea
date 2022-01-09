@@ -34,7 +34,7 @@
               <li><a class="dropdown-item" href="/books/new">Add new</a></li>
             </ul>
           </li>
-          <% if @current_user.admin %>
+          <% if @current_user&.admin %>
           <li class="nav-item">
             <a class="nav-link" href="/users">Users</a>
           </li>
@@ -47,8 +47,8 @@
                 <%= link_to t('forms.sign_out'), {controller: :sessions, action: :destroy, id: session[:session_id]}, method: :delete, class: 'nav-link', style: 'margin: 0;'%>
               </strong>
             </small>
-            <a href='users/<%= @current_user.id%>' style='margin: 0; color: white;'>
-              Logged in as <%= @current_user.username %>
+            <a href='users/<%= @current_user&.id%>' style='margin: 0; color: white;'>
+              Logged in as <%= @current_user&.username %>
             </a>
             </li>
             </ul>

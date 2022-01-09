@@ -82,7 +82,7 @@ class UsersController < ApplicationController
   end
 
   def check_admin_permission
-    unless @current_user.admin
+    unless @current_user&.admin
       respond_to do |format|
         format.all { render html: '405: Method Not Allowed', status: :method_not_allowed }
       end
@@ -90,7 +90,7 @@ class UsersController < ApplicationController
   end
 
   def check_admin_or_self_permission
-    unless @current_user.admin || current_user.id == params[:id].to_i
+    unless @current_user&.admin || current_user.id == params[:id].to_i
       respond_to do |format|
         format.all { render html: '405: Method Not Allowed', status: :method_not_allowed }
       end
