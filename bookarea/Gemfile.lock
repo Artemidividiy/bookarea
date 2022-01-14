@@ -64,7 +64,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
-    bootsnap (1.9.3)
+    bootsnap (1.9.4)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
@@ -82,7 +82,7 @@ GEM
     crass (1.0.6)
     diff-lcs (1.5.0)
     erubi (1.10.0)
-    ffi (1.15.4)
+    ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.8.11)
@@ -223,6 +223,7 @@ GEM
     zeitwerk (2.5.3)
 
 PLATFORMS
+  -darwin-21
   ruby
 
 DEPENDENCIES
@@ -230,6 +231,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  i18n
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)
@@ -250,4 +252,4 @@ RUBY VERSION
    ruby 2.7.0p0
 
 BUNDLED WITH
-   2.1.4
+   2.3.4
