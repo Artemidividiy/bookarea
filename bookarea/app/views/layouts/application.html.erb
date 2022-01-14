@@ -27,11 +27,11 @@
 
       <div class="navbar-collapse collapse" id='navbar'>
         <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-          <li class="nav-item"><a class="nav-link" href='/books'>View all</a></li>
-          <li class="nav-item"><a class='nav-link' href="/books/new">Add new</a></li>
+          <li class="nav-item"><a class="nav-link" href='/books'><%= t('navbars.View all')%></a></li>
+          <li class="nav-item"><a class='nav-link' href="/books/new"><%= t('navbars.Add new')%></a></li>
           <% if @current_user&.admin %>
           <li class="nav-item">
-            <a class="nav-link --bs" href="/users">Users</a>
+            <a class="nav-link --bs" href="/users"><%= t('navbars.Users')%></a>
           </li>
           <% end%>
           </ul>
@@ -39,11 +39,11 @@
             <li>
             <small>
               <strong>
-                <%= link_to t('forms.sign_out'), {controller: :sessions, action: :destroy, id: session[:session_id]}, method: :delete, class: 'nav-link', style: 'margin: 0;'%>
+                <%= link_to t('navbars.Sign Out'), {controller: :sessions, action: :destroy, id: session[:session_id]}, method: :delete, class: 'nav-link', style: 'margin: 0;'%>
               </strong>
             </small>
-            <a href='users/<%= @current_user&.id%>' style='margin: 0; color: white;'>
-              Logged in as <%= @current_user&.username %>
+            <a href='../users/<%= @current_user&.id%>' style='margin: 0; color: white;'>
+              <%= "#{t('navbars.Logged in as')} #{@current_user&.username}" %>
             </a>
             </li>
             </ul>

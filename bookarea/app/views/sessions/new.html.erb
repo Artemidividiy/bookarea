@@ -1,16 +1,16 @@
 <div style='margin: auto; width: 20%;'>
-    <h1>Sign in</h1>
+    <h1><%= t('Forms.sign_in')%></h1>
     <% flash[:error]&.tap do |error| %>
         <div class="alert alert-danger"><%= error %></div>
     <% end %>
     <div>
     <%= form_for(:user, url: sessions_path , method: "post") do |f| %>
-        <%= f.label :username, "Username:" %>
+        <%= f.label :username, "#{t('Forms.Username')}:" %>
         <%= f.text_field(:username, class: "form-control col-12", required: true) %>
-        <%= f.label :password, "Password:" %>
+        <%= f.label :password, "#{t('Forms.Password')}:" %>
         <%= f.password_field(:password, class: "form-control col-12", required: true) %>
-        <%= f.submit("Sign in", class: "btn btn-primary col-12") %>
+        <%= f.submit(t("Forms.sign_in"), class: "btn btn-primary col-12") %>
     <% end %>
-    <%= button_to("Sign up", signup_url, method: :get, class: "btn btn-outline-primary col-12") %>
+    <%= button_to(t("Forms.sign_up"), signup_url, method: :get, class: "btn btn-outline-primary col-12") %>
 </div>
 </div>

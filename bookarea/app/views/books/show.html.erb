@@ -2,38 +2,38 @@
 <div style='margin: auto; width: 20%;'>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= "#{t('Forms.Name')}:" %></strong>
   <%= @book.name %>
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong><%= "#{t('Forms.Author')}:" %></strong>
   <%= @book.author %>
 </p>
 
 <p>
-  <strong>Publishing house:</strong>
+  <strong><%= "#{t('Forms.Publishing house')}:" %></strong>
   <%= @book.publishing_house %>
 </p>
 
 <p>
-  <strong>Year:</strong>
+  <strong><%= "#{t('Forms.Year')}:" %></strong>
   <%= @book.year %>
 </p>
 
 <p>
-  <strong>Isbn:</strong>
+  <strong><%= "#{t('Forms.ISBN')}:" %></strong>
   <%= @book.isbn %>
 </p>
 <div id="like-btn">
 <% if @book.related?(@current_user)%>
-  <%= button_to 'Unlike', { action: :unlike, id: @book.id }, method: :put, remote: true, class: 'btn btn-danger' %>
+  <%= button_to t('Show.Unlike'), { action: :unlike, id: @book.id }, method: :put, remote: true, class: 'btn btn-danger' %>
 <% else%>
-  <%= button_to 'Like', { action: :like, id: @book.id }, method: :put, remote: true, class: 'btn btn-outline-danger' %>
+  <%= button_to t('Show.Like'), { action: :like, id: @book.id }, method: :put, remote: true, class: 'btn btn-outline-danger' %>
 <% end %>
 </div>
 
 <% if @current_user == @book.users.first%>
-<%= link_to 'Edit', edit_book_path(@book) %>
+<%= link_to t('Books.edit'), edit_book_path(@book) %>
 <% end%>
-<%= button_to 'Back', {controller: :books, action: :index}, method: :get, class: 'btn btn-outline-secondary'%>
+<%= button_to t('Forms.Back'), {controller: :books, action: :index}, method: :get, class: 'btn btn-outline-secondary'%>

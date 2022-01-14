@@ -1,0 +1,62 @@
+ru:
+  'Yes': Да
+  'No': Нет
+  navbars:
+    Users : Пользователи
+    View all : Посмотреть все
+    Sign Out : Выйти
+    Logged in as : Авторизован под именем
+    Add new : Добавить книгу
+  Books:
+    label: Книги
+    by: от
+    More: подробнее
+    edit: редактировать
+    destroy: удалить
+    New Book: Добавить еще
+  Show:
+    Like: Добавить
+    Unlike: Убрать
+  Forms:
+    Name: Название
+    Author: Автор
+    Publishing house: Издательство
+    Year: Год
+    create: Создать
+    Back: Назад
+    New Book: Новая Книга
+    ISBN: ISBN
+    Show: Показать
+    Editing Book: Редактирование книги
+    sign_in : Войти
+    Username: Имя пользователя
+    Password: Пароль
+    Email: Почта
+    Confirm password: Введите пароль еще раз
+    sign_up: Зарегистрироваться
+    submit: Подтвердить
+    new_user: Новый пользователь
+    users: Пользователи
+    is admin: админ
+    delete: удалить
+  Users:
+    User data: Данные о пользователе
+    Liked books: Добавленные книги
+    nothing liked: Нет добавленных
+    Edit user: Изменения пользователя
+  messages:
+    are_you_sure?: Вы уверены?
+    delete_admin?: >-
+      Вы собираетесь удалить ваш собственный аккаунт админа
+      Вы уверены?
+    invalid_credentials: Неверные данные
+    book_was_successfully_created: Книга была успешно создана
+    book_was_successfully_updated: Книга была успешно обновлена
+    book_was_successfully_destroyed: Книга была успешно удалена
+    registration_successful: Регистрация прошла успешно
+    user_was_successfully_updated: Пользователь была успешно обновлен
+    user_was_successfully_destroyed: Пользователь был успешно удален
+  errors:
+    one: Есть одна ошибка в форме
+    few: В форме %{count} ошибки
+    many: В форме %{count} ошибок

@@ -28,6 +28,84 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  navbars:
+    Add New : Add New
+    Users : Users
+    View all : View all
+    Sign Out : Sign out
+    Logged in as : Logged in as
+  'Yes': 'Yes'
+  'No': 'No'
+  Books:
+    label: Books
+    by: by
+    More: more
+    edit: edit
+    destroy: destroy
+    are you sure: are you sure?
+    New Book: New Book
+  Show:
+    Like: Like
+    Unlike: Dislike
+  Users:
+    User data: User data
+    Liked books: Liked books
+    nothing liked: nothing liked
+    Edit user: Edit user
+  Forms:
+    Name: Name
+    Author: Author
+    Publishing house: Publishing house
+    Year: Year
+    create: Create
+    Back: Back
+    New Book: New Book
+    ISBN: ISBN
+    Show: Show
+    search: Search
+    reset: Reset
+    submit: Submit
+    delete: Delete
+    sign_in: Sign in
+    sign_up: Sign up
+    sign_out: Sign out
+    Editing Book: Editing Book
+    Username: Username
+    Email: Email
+    Confirm password: Confirm password
+    is admin: is admin
+    Password: Password
+    search_results_for: 'Search results for:'
+    content_placeholder: Paste your text/code here!
+  errors:
+    one: There is an error in form
+    other: There are %{count} errors in form
+  messages:
+    are_you_sure?: Are you sure?
+    delete_admin?: >-
+      You are deleting your own admin account.
+      You will not be able to create a new one.
+      Are you sure?
+    invalid_credentials: Invalid credentials
+    book_was_successfully_created: Paste was successfully created
+    book_was_successfully_updated: Paste was successfully updated
+    book_was_successfully_destroyed: Paste was successfully deleted
+    registration_successful: Registration successful
+    user_was_successfully_updated: User was successfully updated
+    user_was_successfully_destroyed: User was successfully deleted
+  my_account: My account
+  activerecord:
+    attributes:
+      paste:
+        private: Access
+        private?: Is private
+        private!: Private
+        public!: Public
+        untitled: Untitled
+      user:
+        admin: Is admin
+        admin!: admin
+        superuser: Is superuser
+        superuser!: superuser
+        password_confirmation: Confirm password

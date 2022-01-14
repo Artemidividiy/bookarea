@@ -11,21 +11,21 @@
       </ul>
     </div>
   <% end %>
-  <%= form.label :username, "Username:" %>
+  <%= form.label :username, "#{t('Forms.Username')}:" %>
   <%= form.text_field(:username, class: "form-control col-12", required: true) %>
-  <%= form.label :email, "Email:" %>
+  <%= form.label :email, "#{t('Forms.Email')}:" %>
   <%= form.text_field(:email, class: "form-control col-12", required: true) %>
-  <%= form.label :password, "Password:" %>
+  <%= form.label :password, "#{t('Forms.Password')}:" %>
   <%= form.password_field(:password, class: "form-control col-12", required: true) %>
   <% unless current_user&.admin %>
-    <%= form.label :password_confirmation, "Confirm password:" %>
+    <%= form.label :password_confirmation, "#{t('Forms.Confirm password')}:" %>
     <%= form.password_field(:password_confirmation, class: "form-control col-12", required: true) %>
   <% end %>
   <% if current_user&.admin %>
     <div class="form-check">
       <%= form.check_box :admin, class: "form-check-input" %>
-      <%= form.label :admin, "Is Admin", class: "form-check-label" %>
+      <%= form.label :admin, t("Forms.is admin"), class: "form-check-label" %>
     </div>
   <% end %>
-  <%= form.submit("Submit", class: "btn btn-outline-primary col-12") %>
+  <%= form.submit(t("Forms.submit"), class: "btn btn-outline-primary col-12") %>
 <% end %>

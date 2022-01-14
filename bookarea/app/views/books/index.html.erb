@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
-<h1>Books</h1>
+<h1><%= t('Books.label') %></h1>
     <div class='row row-cols-1 row-cols-md-5'>
     <% @books.each do |book| %>
     <div style='margin: 0.1rem;'>
       <div class="card mb-3">
-  <div class="card-header">ISBN: <%= book.isbn%></div>
+  <div class="card-header">ISBN:<%= book.isbn%></div>
   <div class="card-body">
-    <h5 class="card-title">"<%= book.name%>" by <%= book.author%></h5>
+    <h5 class="card-title">"<%= book.name%>" <%= t('Books.by') %> <%= book.author%></h5>
   </div>
   <div class='card-footer'>
   <div class='container'>
   <div class='row'>
   <div class='col'>
-    <%= button_to 'more', {controller: :books, action: :show, id: book.id}, method: :get %>
+    <%= button_to t('Books.More'), {controller: :books, action: :show, id: book.id}, method: :get %>
     </div>
     <div class='col'>
     <% if @current_user&.admin || @current_user == book.users.first%>
-    <%= link_to 'Edit', edit_book_path(book) %>
-    <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to t('Books.edit'), edit_book_path(book) %>
+    <%= link_to t('Books.destroy'), book, method: :delete, data: { confirm: t('messages.are_you_sure?') } %>
     <% end%>
     </div>
     </div>
@@ -29,4 +29,4 @@
     </div>
 <br>
 
-<%= button_to 'New Book', {controller: :books, action: :new}, method: :get, class: 'btn btn-outline-primary ntm-sm' %>
+<%= button_to t('Forms.New Book'), {controller: :books, action: :new}, method: :get, class: 'btn btn-outline-primary ntm-sm' %>

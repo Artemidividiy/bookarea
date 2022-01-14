@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   put '/books/:id/unlike', to: 'books#unlike'
   get '/signin', to: 'sessions#new'
   get '/signup', to: 'users#new'
+
+  scope '(:locale)', locale: /en|ru/ do
+    resources :books, :users
+  end
 end

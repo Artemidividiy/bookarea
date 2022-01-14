@@ -2,45 +2,23 @@
 <div class='cardo'>
   <div class='card-box'>
     <% if book.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
-
+      <div class="alert alert-danger" role="alert">
+        <b><%= t 'errors', count: book.errors.count %></b>
         <ul>
           <% book.errors.each do |error| %>
-            <li><%= error.full_message %></li>
+            <li><small>
+              <%= error.full_message %>
+            </small></li>
           <% end %>
         </ul>
       </div>
     <% end %>
-
-    <div class="">
-    <%= form.label :name %>
-      <%= form.text_field :name, {class: 'form-control'}%>
-    </div>
-
-    <div class="">
-    <%= form.label :author %>
-      <%= form.text_field :author, {class: 'form-control'} %>
-    </div>
-
-    <div class="">
-    <%= form.label :publishing_house %>
-      <%= form.text_field :publishing_house, {class: 'form-control'} %> 
-    </div>
-
-    <div class="">
-    <%= form.label :year %>
-      <%= form.number_field :year, {class: 'form-control'} %>
-    </div>
-
-    <div class="">
-    <%= form.label :isbn %>   
-      <%= form.text_field :isbn, {class: 'form-control'} %>
-    </div>
-
-    <div class="actions">
-      <%= form.submit %>
-    </div>
+    <%= form.text_field :name, {class: 'form-control', placeholder: t('Forms.Name')}%>
+    <%= form.text_field :author, {class: 'form-control', placeholder: t('Forms.Author')}%>
+    <%= form.text_field :publishing_house, {class: 'form-control', placeholder: t('Forms.Publishing house') }%>
+    <%= form.number_field :year, {class: 'form-control', placeholder: t('Forms.Year')} %>
+    <%= form.text_field :isbn, {class: 'form-control', placeholder: t('Forms.ISBN')} %>
+    <%= form.submit value: t('Forms.create')%>
   </div>
 </div>
 <% end %>
