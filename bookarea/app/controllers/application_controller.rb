@@ -2,28 +2,27 @@
 
 # This is the base controller for the app
 class ApplicationController < ActionController::Base
-   
-    before_action :set_locale
-    before_action :authenticate
-    before_action :set_current_user
+  before_action :set_locale
+  before_action :authenticate
+  before_action :set_current_user
 
-    def set_locale
-      I18n.locale = :ru
-    end
-
-    def current_user
-      User.find(session[:current_user_id])
-    rescue StandardError
-      nil
-    end
-  
-    def set_current_user
-      @current_user = current_user
-    end
-  
-    private
-  
-    def authenticate
-      redirect_to signin_path unless current_user
-    end
+  def set_locale
+    I18n.locale = :ru
   end
+
+  def current_user
+    User.find(session[:current_user_id])
+  rescue StandardError
+    nil
+  end
+
+  def set_current_user
+    @current_user = current_user
+  end
+
+  private
+
+  def authenticate
+    redirect_to signin_path unless current_user
+  end
+end
