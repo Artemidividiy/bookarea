@@ -1,6 +1,8 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -10,7 +12,7 @@ module Bookarea
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    config.i18n.available_locales = [:en, :ru]
+    config.i18n.available_locales = %i[en ru]
     config.i18n.default_locale = :en
     config.i18n.fallbacks = true
     # Rack::Webconsole
@@ -22,7 +24,7 @@ module Bookarea
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb, yml}')]
-    config.i18n.available_locales = [:en, :ru]
+    config.i18n.available_locales = %i[en ru]
     config.i18n.default_locale = :en
   end
 end

@@ -30,11 +30,11 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def authenticate
-      redirect_to signin_path unless current_user
-    end
+  def authenticate
+    redirect_to signin_path unless current_user
+  end
 
-    def extract_locale_from_accept_language_header
-      request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
-    end
+  def extract_locale_from_accept_language_header
+    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+  end
 end

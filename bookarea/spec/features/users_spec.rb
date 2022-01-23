@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 describe 'User System' do
-  
   it 'allows to register a user, log in', js: true do
     visit root_path
     # click_on I18n.t('Forms.sign_up')
