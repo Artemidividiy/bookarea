@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# class that defines books controller
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy like unlike]
   def input; end
@@ -48,11 +49,10 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to book_url(@book), notice: t('messages.book_was_successfully_updated') }
-        format.json { render :show, status: :ok, location: @book }
+        format.html { redirect_to book_url(@book), notice: 'Book was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
+
       end
     end
   end
